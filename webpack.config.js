@@ -5,7 +5,8 @@ var autoprefixer = require("autoprefixer");
 module.exports = {
   devtool: "#inline-source-map",
   entry: {
-    "docs.js": [
+    vendor: ["react", "react-dom"],
+    docs: [
       "./docs/index.jsx"
       // 'webpack/hot/only-dev-server',
       // 'webpack-dev-server/client?http://localhost:8000'
@@ -13,7 +14,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, "build"),
-    filename: "[name]"
+    filename: "[name].js"
   },
   module: {
     loaders: [
@@ -34,6 +35,10 @@ module.exports = {
     extensions: ["", ".js", ".jsx"]
   },
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "vendor",
+      minChunks: Infinity
+    }),
     // new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new webpack.IgnorePlugin(/vertx/)

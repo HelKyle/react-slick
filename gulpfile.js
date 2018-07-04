@@ -61,7 +61,8 @@ gulp.task("server", ["watch", "copy", "sass"], function(callback) {
   new WebpackDevServer(webpack(myConfig), {
     contentBase: "./build",
     hot: true,
-    debug: true
+    debug: true,
+    disableHostCheck: true
   }).listen(8080, "0.0.0.0", function(err, result) {
     if (err) {
       console.log(err);
