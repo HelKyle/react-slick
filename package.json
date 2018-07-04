@@ -119,5 +119,8 @@
   "bugs": {
     "url": "https://github.com/HelKyle/react-slick/issues"
   },
-  "homepage": "https://github.com/HelKyle/react-slick"
+  "homepage": "https://github.com/HelKyle/react-slick",
+  "publishConfig": {
+    "access": "public"
+  }
 }
