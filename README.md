@@ -52,6 +52,7 @@ class SimpleSlider extends React.Component {
 
 ### Bug Fixed (May Be Not)
 
+- Remove unnecessary div in single mode.
 - Explicitly not-passive to fix iOS 11.3.0 scroll issue.
 - Stop autoplay when swipe start and replay when swipe end.
 - Preserving custom style on slider.
